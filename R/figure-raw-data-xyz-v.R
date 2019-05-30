@@ -4,16 +4,17 @@
 #' 
 #' @description 
 #' Code to generate manusript figures: 
-#' - Fig. 1: (a): 3-dimmensional acceleration time series from 5 seconds of 
+#' - Figure: 3-dimmensional acceleration time series from 5 seconds of 
 #'   walking for two differentstudy participants. 
-#' - Fig. 1: (b): Same as (a), but showing the vector magnitude. 
+#' - Figure: Same as above, but showing the vector magnitude. 
 
 rm(list = ls())
 
 library(adeptdata)
 library(ggplot2)
 library(reshape2)
-source(file.path("R", "theme-publication.R"))
+library(dplyr)
+source(file.path("R", "util.R"))
 
 ggsave.device  <- "png"
 loc_id.levels  <- c("left_wrist", "left_hip","left_ankle", "right_ankle")

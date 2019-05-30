@@ -11,6 +11,7 @@ library(data.table)
 library(dplyr)
 library(TSclust)
 library(testthat)
+source(file.path("R", "util.R"))
 
 ## Read data 
 strides.df.path <- file.path("data", "strides-df-anonymized.csv")
@@ -18,16 +19,6 @@ strides.df <- as.data.frame(fread(strides.df.path))
 
 ## Add stride ID   
 strides.df <- strides.df %>% mutate(stride_id = paste0(subj_id, "_", subj_stride_id))
-
-## Function to interpolate vector to a fixed vector length and scale it to
-## have mean 0 and variance 1
-intrpl.scale.vec <- function(vec, nout = 200){
-  vec.out <- approx(
-    x = seq(0, 1, length.out = length(vec)),  
-    y = vec,
-    xout = seq(0, 1, length.out = nout))$y
-  return(as.vector(scale(vec.out)))
-}
 
 # Function to transform all strides (identified based on on stride ID `stride_id`)
 # within a data frame
