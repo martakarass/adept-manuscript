@@ -3,16 +3,7 @@
 #' Marta Karas <marta.karass@gmail.com>
 #'
 #' @description
-#' Created: 2019-03-18
-#' Note: It is assumed that the working directory is the current R script directory
-#' 
-#' This script contains the code to estimate stride pattern templates 
-#' based on a data set of of manually pre-segmented strides. 
-#' 
-#' Specifically, this script was used to generate data `stride_template`
-#' object attached to the `adeptdata` package. The result of running this script is 
-#' tested to be equal to the templates from `adeptdata` package (see code
-#' at the end of the script file).  
+#' Note: It is assumed that the working directory is the project directory. 
 
 rm(list = ls())
 
@@ -22,7 +13,7 @@ library(TSclust)
 library(testthat)
 
 ## Read data 
-strides.df.path <- file.path("..", "data", "strides-df-anonymized.csv")
+strides.df.path <- file.path("data", "strides-df-anonymized.csv")
 strides.df <- as.data.frame(fread(strides.df.path))
 
 ## Add stride ID   
