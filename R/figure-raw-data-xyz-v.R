@@ -4,9 +4,9 @@
 #' 
 #' @description 
 #' Code to generate manusript figures: 
-#' - Figure: 3-dimmensional acceleration time series from 5 seconds of 
+#' - Figure 1a: 3-dimmensional acceleration time series from 5 seconds of 
 #'   walking for two differentstudy participants. 
-#' - Figure: Same as above, but showing the vector magnitude. 
+#' - Figure 1b: Same as above, but showing the vector magnitude. 
 
 rm(list = ls())
 

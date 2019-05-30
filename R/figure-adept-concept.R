@@ -4,8 +4,8 @@
 #' 
 #' @description 
 #' Code to generate manusript figures: 
-#' - Figure: visualize the translation and scaling operations on the data. 
-#' - Figure: acceleration time series for two subsequent strides, where the 
+#' - Figure 2: visualize the translation and scaling operations on the data. 
+#' - Figure 4: acceleration time series for two subsequent strides, where the 
 #'   beginning of a stride is marked.
 
 rm(list = ls())
