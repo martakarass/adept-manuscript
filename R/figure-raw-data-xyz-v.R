@@ -6,7 +6,7 @@
 #' Code to generate manusript figures: 
 #' - Fig. 1: (a): 3-dimmensional acceleration time series from 5 seconds of 
 #'   walking for two differentstudy participants. 
-#' - Fig. 1: (b): Same as the (a) panels, but showing the vector magnitude. 
+#' - Fig. 1: (b): Same as (a), but showing the vector magnitude. 
 
 rm(list = ls())
 
@@ -15,6 +15,7 @@ library(ggplot2)
 library(reshape2)
 source(file.path("R", "theme-publication.R"))
 
+ggsave.device  <- "png"
 loc_id.levels  <- c("left_wrist", "left_hip","left_ankle", "right_ankle")
 loc_id.labels  <- c( "Left wrist","Left hip", "Left ankle", "Right ankle")
 subj_id.sub    <- c("id3e3e50c7", "idabd0c53c")
@@ -41,7 +42,7 @@ plt <-
   scale_color_manual(breaks = c("x", "y", "z"),
                      values = c("red", "blue", "green"))
 # plot(plt)
-ggsave(filename = file.path("figures", plt.name), plot = plt, device = "png", 
+ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device, 
        width = 10, height = 5.5, units = "in")
 
 
@@ -63,6 +64,6 @@ plt <-
   theme_Publication() + 
   labs(x = "Time [s]", y = "Vector magnitude [g]") 
 # plot(plt)
-ggsave(filename = file.path("figures", plt.name), plot = plt, device = "png", 
+ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device, 
        width = 10, height = 5.2, units = "in")
 
