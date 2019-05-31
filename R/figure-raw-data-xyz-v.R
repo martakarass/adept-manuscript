@@ -69,4 +69,3 @@ plt <-
 # plot(plt)
 ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device, 
        width = 10, height = 5.2, units = "in")
-

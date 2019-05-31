@@ -151,5 +151,3 @@ plt <-
 # plot(plt)
 ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device, 
        width = 8, height = 3.7, units = "in")  
-
-

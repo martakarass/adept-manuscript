@@ -173,13 +173,3 @@ plt <-
 # plot(plt)
 ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device, 
        width = 5, height = 6, units = "in")  
-
-
-
-
-
-
-
-
-
-
