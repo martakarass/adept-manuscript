@@ -24,7 +24,7 @@ subj_id.tmp    <- "id3e3e50c7"
 loc_id.tmp     <- "left_hip"
 
 
-## Figure:
+## Figure 2:
 ## visualize the translation and scaling operations on the data. 
 plt.name <- "adaptive_movelets_concept-1.png"
 
@@ -106,7 +106,9 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
        width = 8, height = 5.7, units = "in")  
 
 
-## Figure:
+## -----------------------------------------------------------------------------
+
+## Figure 4:
 ## acceleration time series for two subsequent strides, where the beginning of a
 ## stride is marked.
 plt.name <- "stride_visualization-1.png"

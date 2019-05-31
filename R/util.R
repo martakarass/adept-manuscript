@@ -124,3 +124,62 @@ dig_filter = function(x, fs, LD = 0, LU = fs/2){
   xf = xf[1:N0]
 }
 
+
+
+#' Estimate stride template.
+#' 
+#' Estimate strtide templates based on a collection of pre-segmented 
+#' walking strides. 
+#' 
+#' @param val.vec A numeric vector. Values of vector magnitude from 
+#' pre-segmented walking strides. 
+#' @param id.vec A numeric/character vector. Contains value of unique ID
+#' for pre-segmented walking strides whose corresponding vector magnitude
+#' values are in \code{val.vec}. 
+#' @param time.vec A numeric vector. Determines the order of values within each 
+#' unique pre-segmented walking stride. Used to sort data (does not have to 
+#' correspond to any true time of data collection).
+#' @param k An integer scalar. Number of clusters we cluster the walking strides
+#' into. 
+#' @param nout A numeric scalar. Determines vector length to which we 
+#' interpolate each walking stride before the clustering. Default is 200. 
+#' 
+#' @return A list with The following objects: 
+#' \itemize{
+#'   \item \code{x_mat} - A numeric matrix. Each row corresponds to one 
+#'   stride vector, interpolated and rescaled. 
+#'   \item \code{D_mat} - A numeric matrix. Strides dissimilarity matrix. 
+#'   \item \code{cluster_idx} - An integer vector. Stride cluster assignment. 
+#' }
+#' 
+estimate.stride.tmpl <- function(val.vec, id.vec, time.vec, k, nout = 200){
+  require(TSclust)
+  ## Strides data frame
+  df <- data.frame(val = val.vec, id = id.vec, val_time = time.vec, stringsAsFactors = FALSE) %>%
+    arrange(id, val_time)
+  id.unique.vec <- sort(unique(df$id))
+  ## Interpolated and rescaled strides matrix
+  vec.intrpl.l <- lapply(id.unique.vec, function(id.tmp){
+    intrpl.scale.vec(df[df$id == id.tmp, "val"], nout)
+  })
+  x.mat <- matrix(unlist(vec.intrpl.l), ncol = nout, byrow = TRUE)
+  ## Strides distance matrix
+  D.mat <- TSclust::diss(x.mat, "COR")
+  ## Medoids stride index 
+  medoids.nobs.idx0 <- (1:k / k) * length(id.unique.vec)
+  medoids.nobs.idx <- round(medoids.nobs.idx0 - (min(medoids.nobs.idx0) / 2))
+  medoids.id <- df %>%
+    group_by(id) %>%
+    summarize(n_obs = n()) %>%
+    arrange(n_obs) %>% 
+    filter(row_number() %in% medoids.nobs.idx) %>% 
+    pull(id)
+  medoids.idx <- which(id.unique.vec %in% medoids.id)
+  ## Run PAM clustering
+  pam.out <- cluster::pam(D.mat, k, diss = TRUE, medoids = medoids.idx)
+  out.l <- list(x_mat = x.mat, 
+                D_mat = D.mat,
+                cluster_idx = pam.out$clustering)
+  return(out.l)
+}
+

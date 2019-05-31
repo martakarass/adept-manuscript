@@ -66,9 +66,9 @@ strides.obs.n.df <-
 ## Iterates over grid of k=1,...,5 subpopulation-specific clusters to be computed
 ## Returns list of five matrices, where each matrix contains 1,...,5 
 ## subpopulation-specific stride templates, respectively
-estimate.stride.template <- function(x.mat, D.mat){   
+estimate.stride.template.0 <- function(x.mat, D.mat, cluster.k.grid = 1:5){   
   out.all_k <- list()
-  for (cluster.k in 1:5){  
+  for (cluster.k in cluster.k.grid){  
     ## Get cluster medoids
     medoids.idx0 <- (seq(1,cluster.k) / cluster.k) * nrow(strides.obs.n.df)
     medoids.idx0 <- round(medoids.idx0 - (min(medoids.idx0) / 2))
@@ -91,10 +91,10 @@ estimate.stride.template <- function(x.mat, D.mat){
 }
 
 ## Estimate stride template(s) via correlation clustering 
-left_wrist  <- estimate.stride.template(lw.strides.intrpl.mat, lw.strides.D.mat)
-left_hip    <- estimate.stride.template(lh.strides.intrpl.mat, lh.strides.D.mat)
-left_ankle  <- estimate.stride.template(la.strides.intrpl.mat, la.strides.D.mat)
-right_ankle <- estimate.stride.template(ra.strides.intrpl.mat, ra.strides.D.mat)
+left_wrist  <- estimate.stride.template.0(lw.strides.intrpl.mat, lw.strides.D.mat)
+left_hip    <- estimate.stride.template.0(lh.strides.intrpl.mat, lh.strides.D.mat)
+left_ankle  <- estimate.stride.template.0(la.strides.intrpl.mat, la.strides.D.mat)
+right_ankle <- estimate.stride.template.0(ra.strides.intrpl.mat, ra.strides.D.mat)
 
 # ## Final object 
 # stride_template <- list(

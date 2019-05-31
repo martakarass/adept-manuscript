@@ -23,7 +23,7 @@ subj_id.sub    <- c("id3e3e50c7", "idabd0c53c")
 subj_id.labels <- paste0("Participant ", 1:length(subj_id.sub))
 
 
-## Figure: 
+## Figure 1a: 
 ## 3-dimmensional acceleration time series from 5 seconds of walking 
 ## for two different study participants
 plt.name <- "3d_acc-1.png"
@@ -47,7 +47,9 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
        width = 10, height = 5.5, units = "in")
 
 
-## Figure: 
+## -----------------------------------------------------------------------------
+
+## Figure 1b: 
 ## 1-dimmensional vector magniture time series from 5 seconds of walking 
 ## for two different study participants
 plt.name <- "1d_acc-1.png"
