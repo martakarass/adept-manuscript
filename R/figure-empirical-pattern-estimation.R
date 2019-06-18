@@ -23,6 +23,8 @@ source(file.path("R", "util.R"))
 ggsave.device <- "png"
 
 
+## -----------------------------------------------------------------------------
+
 ## Figure 5a:
 ## 200 manually segmented strides from right ankle. 
 plt.name <- "empirical_pattern_FINAL-1.png"

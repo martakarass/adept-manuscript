@@ -4,7 +4,11 @@
 
 ## `data`
 
+Contains CSV files with raw data used in computing the manuscript results (which are not attached to `adeptdata` package). 
+
 ## `data-results`
+
+Contains CSV files with precomputed manuscript results. 
 
 ## `figures` 
 
@@ -12,9 +16,11 @@ Contains PNG files of the manuscript figures.
 
 ## `R`
 
-- `run-application-example.R` - Code to perform stride pattern segmentation from Application example in the manuscript.  Segmentation results are stored at "data-results/application-example-segmentation.csv".
+Contains `R` scripts used to generate manuscript results and figures. 
 
-- `data-estimate-empirical-pattern.R` - Code to estimate stride pattern templates based on a data set of of manually pre-segmented strides. The code was used to generate `stride_template` object attached to the `adeptdata` package. 
+- `run-application-example.R` - Code to perform stride pattern segmentation from Application example in the manuscript.  Segmentation results are stored at "data-results/application-example-segmentation.csv". Session info output is included. 
+
+- `data-estimate-empirical-pattern.R` - Code to estimate stride pattern templates based on a data set of of manually pre-segmented strides. The code was used to generate `stride_template` object attached to the `adeptdata` package. <br/>
 
 - `figure-adept-concept.R` - Code to generate manuscript figures: 
     - Figure 2: visualization of the translation and scaling operations on the data. 
@@ -34,6 +40,10 @@ Contains PNG files of the manuscript figures.
 - `figure-raw-data-xyz-v.R` - Code to generate manuscript figures: 
     - Figure 1a: 3-dimmensional acceleration time series from 5 seconds of walking for two different study participants. 
     - Figure 1b: Same as above, but showing 1-dimmensional vector magnitude. <br/><br/>
+    
+- `figure-results-application-example.R` - Code to generate manuscript figures: 
+    - Figure 11: Heatmap  of  walking  cadence  estimates  using  ADEPT  on  left ankle  VM  data. 
+    - Figure 12: Estimated start point (x-axis) and duration time (y-axis) of all estimated strides for onestudy participant across four sensor locations. <br/><br/>
     
 - `figure-results-empirical-patterns.R` - Code to generate manuscript figures: 
     - igure 10: Sensor location-specific sets of estimated empirical patterns of a stride. <br/><br/>

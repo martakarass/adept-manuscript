@@ -23,6 +23,8 @@ subj_id.sub    <- c("id3e3e50c7", "idabd0c53c")
 subj_id.labels <- paste0("Participant ", 1:length(subj_id.sub))
 
 
+## -----------------------------------------------------------------------------
+
 ## Figure 1a: 
 ## 3-dimmensional acceleration time series from 5 seconds of walking 
 ## for two different study participants

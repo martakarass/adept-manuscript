@@ -23,6 +23,8 @@ loc_id.levels  <- c("left_wrist", "left_hip","left_ankle", "right_ankle")
 loc_id.labels  <- c( "Left wrist","Left hip", "Left ankle", "Right ankle")
 
 
+## -----------------------------------------------------------------------------
+
 ## Figure 7: 
 ## demonstration of window size effect on smoothing. 
 plt.name <- "smoothing_w_effect-1.png"

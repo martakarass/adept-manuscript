@@ -24,6 +24,8 @@ subj_id.tmp    <- "id3e3e50c7"
 loc_id.tmp     <- "left_hip"
 
 
+## -----------------------------------------------------------------------------
+
 ## Figure 2:
 ## visualize the translation and scaling operations on the data. 
 plt.name <- "adaptive_movelets_concept-1.png"
