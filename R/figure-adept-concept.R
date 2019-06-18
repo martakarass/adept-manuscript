@@ -3,7 +3,7 @@
 #' Marta Karas <marta.karass@gmail.com>
 #' 
 #' @description 
-#' Code to generate manusript figures: 
+#' Code to generate manuscript figures: 
 #' - Figure 2: visualize the translation and scaling operations on the data. 
 #' - Figure 4: acceleration time series for two subsequent strides, where the 
 #'   beginning of a stride is marked.

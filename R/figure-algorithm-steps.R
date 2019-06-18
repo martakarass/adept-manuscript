@@ -3,7 +3,7 @@
 #' Marta Karas <marta.karass@gmail.com>
 #' 
 #' @description 
-#' Code to generate manusript figures: 
+#' Code to generate manuscript figures: 
 #' - Figure 7: demonstration of window size effect on smoothing. 
 #' - Figure 8: visualization of the ADEPT covariance matrix. 
 #' - Figure 9: visualization of the algorithm tuning step.

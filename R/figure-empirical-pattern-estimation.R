@@ -3,7 +3,7 @@
 #' Marta Karas <marta.karass@gmail.com>
 #' 
 #' @description 
-#' Code to generate manusript figures: 
+#' Code to generate manuscript figures: 
 #' - Figure 5a: 200 manually segmented strides from right ankle. 
 #' - Figure 5b: 200 manually segmented strides from right ankle after linear 
 #'   interpolation and normalization to have meanzero and variance one.

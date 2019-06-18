@@ -3,7 +3,7 @@
 #' Marta Karas <marta.karass@gmail.com>
 #' 
 #' @description 
-#' Code to generate manusript figures: 
+#' Code to generate manuscript figures: 
 #' - Figure 1a: 3-dimmensional acceleration time series from 5 seconds of 
 #'   walking for two differentstudy participants. 
 #' - Figure 1b: Same as above, but showing the vector magnitude. 

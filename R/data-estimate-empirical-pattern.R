@@ -3,7 +3,9 @@
 #' Marta Karas <marta.karass@gmail.com>
 #'
 #' @description
-#' Note: It is assumed that the working directory is the project directory. 
+#' Code to estimate stride pattern templates based on a data set of of manually 
+#' pre-segmented strides. The code was used to generate `stride_template` 
+#' object attached to the `adeptdata` package. 
 
 rm(list = ls())
 
