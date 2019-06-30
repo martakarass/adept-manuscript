@@ -27,7 +27,7 @@ ggsave.device <- "png"
 
 ## Figure 5a:
 ## 200 manually segmented strides from right ankle. 
-plt.name <- "empirical_pattern_FINAL-1.png"
+plt.name <- "methods_manually_segmented_strides.png"
 
 strides.df.path <- file.path("data", "strides-df-anonymized.csv")
 strides.df <- as.data.frame(fread(strides.df.path))
@@ -61,7 +61,7 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 ## Figure 5b:
 ## 200 manually segmented strides from right ankle after linear interpolation 
 ## and normalization to have meanzero and variance one.
-plt.name <- "empirical_pattern_FINAL-2.png"
+plt.name <- "methods_manually_segmented_strides_norm.png"
 
 V.intrpl.l <- lapply(stride_id.sub, function(stride_id.tmp){
   V.vec <- ra.strides.df.sub %>%
@@ -99,7 +99,7 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 ## Figure 6a:
 ## 642 normalized strides clustered into two groups based on their correlation
 ## similarity. 
-plt.name <- "empirical_pattern_multiple2-1.png"
+plt.name <- "methods_strides_clustered_2_groups.png"
 
 k.tmp <- 2
 tmpl.out <- estimate.stride.tmpl(
@@ -140,7 +140,7 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 ## Figure 6b:
 ## 642 normalized strides clustered into three groups based on their correlation
 ## similarity. 
-plt.name <- "empirical_pattern_multiple3-1.png"
+plt.name <- "methods_strides_clustered_3_groups.png"
 
 k.tmp <- 3
 tmpl.out <- estimate.stride.tmpl(

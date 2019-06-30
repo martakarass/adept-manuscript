@@ -24,7 +24,7 @@ loc_id.labels  <- c( "Left wrist","Left hip", "Left ankle", "Right ankle")
 
 ## Figure 10: 
 ## Sensor location-specific sets of estimated empirical patterns of a stride. 
-plt.name <- "results_empirical_pattern-1.png"
+plt.name <- "results_estimated_empirical_patterns.png"
 
 vl <- 200
 plt.df <- data.frame(

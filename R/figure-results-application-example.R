@@ -31,7 +31,7 @@ loc_id.labels  <- c( "Left wrist","Left hip", "Left ankle", "Right ankle")
 
 ## Figure 11: 
 ## Sensor location-specific sets of estimated empirical patterns of a stride. 
-plt.name <- "results_heatmap-1.png"
+plt.name <- "results_cadence_estimates_heatmap.png"
 
 res.df <- as.data.frame(fread(file.path("data-results", "application-example-segmentation.csv")))
 
@@ -107,7 +107,7 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 ## Figure 12: 
 ## Estimated start point (x-axis) and duration time (y-axis) of all
 ## estimated strides for onestudy participant across four sensor locations. 
-plt.name <- "results_bubble_plot-1.png"
+plt.name <- "results_stride_duration_bubble_plot.png"
 
 subj_id.tmp.idx <- 27
 subj_id.tmp <- subj_id.levels[subj_id.tmp.idx]
@@ -172,7 +172,7 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 ## Figure 13: 
 ## Comparison of stride segmentation using the manual and ADEPT approaches for 
 ## four different body locations.
-plt.name <- "segm_compare_with_manual_zoom-1.png"
+plt.name <- "results_manual_vs_adept_segmentation.png"
 
 subj_id.tmp <- "idf5e3678b"
 

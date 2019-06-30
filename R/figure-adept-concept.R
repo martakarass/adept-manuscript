@@ -28,7 +28,7 @@ loc_id.tmp     <- "left_hip"
 
 ## Figure 2:
 ## visualize the translation and scaling operations on the data. 
-plt.name <- "adaptive_movelets_concept-1.png"
+plt.name <- "intro_translation_and_scaling.png"
 
 acc.sub <- 
   acc_walking_IU %>%
@@ -113,7 +113,7 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 ## Figure 4:
 ## acceleration time series for two subsequent strides, where the beginning of a
 ## stride is marked.
-plt.name <- "stride_visualization-1.png"
+plt.name <- "intro_stride_notation.png"
 
 plt.df <- acc.sub
 plt.df$vm_smoothed <- dig_filter(plt.df$vm, 100, LD = 0, LU = 4)

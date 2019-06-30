@@ -27,7 +27,7 @@ loc_id.labels  <- c( "Left wrist","Left hip", "Left ankle", "Right ankle")
 
 ## Figure 7: 
 ## demonstration of window size effect on smoothing. 
-plt.name <- "smoothing_w_effect-1.png"
+plt.name <- "methods_smoothing_w_param_effect.png"
 subj_id.sub <- c("idabd0c53c")
 
 plt.df.0 <- 
@@ -77,7 +77,7 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 ## Figure 8: 
 ## visualization of the ADEPT covariance matrix. 
 
-plt.name <- "covariance_heatmap-1.png"
+plt.name <- "methods_adept_similarity_matrix.png"
 
 subj_id.sub <- c("idabd0c53c")
 loc_id.sub  <- c("left_ankle")
@@ -155,8 +155,8 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 ## Figure 9: 
 ## visualization of the algorithm tuning step.
 
-plt.name.1 <- "step2_correction-1.png"
-plt.name.2 <- "step2_correction-2.png"
+plt.name.1 <- "methods_fine_tuning_part1.png"
+plt.name.2 <- "methods_fine_tuning_part2.png"
 
 vm_sm025 <- windowSmooth(vm, W = 0.25, x.fs = 100)
 plt.df <- data.frame(
@@ -178,7 +178,7 @@ plt <-
   scale_y_continuous( limits = c(0, 5)) + 
   geom_vline(xintercept = c(6.42 - 5, 6.42 + 1.06 - 5), color = "blue") + 
   facet_grid(. ~ loc_id) + 
-  theme_Publication()
+  theme_Publication() + 
   labs(x = "Time [s]", y = "Vector magnitude [g]")
 # plot(plt)
 ggsave(filename = file.path("figures", plt.name.1), plot = plt, device = ggsave.device, 
