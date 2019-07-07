@@ -144,7 +144,7 @@ dig_filter = function(x, fs, LD = 0, LU = fs/2){
 #' @param nout A numeric scalar. Determines vector length to which we 
 #' interpolate each walking stride before the clustering. Default is 200. 
 #' 
-#' @return A list with The following objects: 
+#' @return A list with the following objects: 
 #' \itemize{
 #'   \item \code{x_mat} - A numeric matrix. Each row corresponds to one 
 #'   stride vector, interpolated and rescaled. 
