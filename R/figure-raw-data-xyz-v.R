@@ -4,9 +4,7 @@
 #' 
 #' @description 
 #' Code to generate manuscript figures: 
-#' - Figure 1a: 3-dimmensional acceleration time series from 5 seconds of 
-#'   walking for two differentstudy participants. 
-#' - Figure 1b: Same as above, but showing the vector magnitude. 
+#' - "intro_3d_1d_acc.png" 
 
 rm(list = ls())
 
@@ -20,16 +18,16 @@ source(file.path("R", "util.R"))
 ggsave.device  <- "png"
 loc_id.levels  <- c("left_wrist", "left_hip","left_ankle", "right_ankle")
 loc_id.labels  <- c( "Left wrist","Left hip", "Left ankle", "Right ankle")
-subj_id.sub    <- c("id3e3e50c7", "idabd0c53c")
-subj_id.labels <- paste0("Participant ", 1:length(subj_id.sub))
 
 
 ## -----------------------------------------------------------------------------
+## Figure 
 
-## Figure 1a: 
-## 3-dimmensional acceleration time series from 5 seconds of walking 
-## for two different study participants
-plt.name <- "intro_3d_acc.png"
+plt.name <- "intro_3d_1d_acc.png"
+
+subj_id.sub    <- c("id3e3e50c7", "idabd0c53c")
+subj_id.labels <- paste0("Participant ", 1:length(subj_id.sub))
+
 plt.df <- 
   acc_walking_IU %>% 
   filter(subj_id %in% subj_id.sub) %>%
@@ -45,17 +43,7 @@ plt_a <-
   labs(x = "Time [s]", y = "Amplitude [g]", color = "Axis", title = "(a)") +  
   scale_color_manual(breaks = c("x", "y", "z"),
                      values = c("red", "blue", "green"))
-# plot(plt)
-# ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device, 
-#        width = 10, height = 5.5, units = "in")
 
-
-## -----------------------------------------------------------------------------
-
-## Figure 1b: 
-## 1-dimmensional vector magniture time series from 5 seconds of walking 
-## for two different study participants
-plt.name <- "intro_1d_acc.png"
 plt.df <- 
   acc_walking_IU %>% 
   filter(subj_id %in% subj_id.sub) %>%
@@ -69,13 +57,9 @@ plt_b <-
   scale_x_continuous(limits = c(0, 5)) + 
   theme_Publication() + 
   labs(x = "Time [s]", y = "Vector magnitude [g]", title = "(b)") 
-# plot(plt)
-# ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device, 
-#        width = 10, height = 5.2, units = "in")
 
 plt <- grid.arrange(plt_a, plt_b, ncol=1, heights = c(53/100, 47/100))
 
-plt.name <- "intro_3d_1d_acc.png"
 ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device, 
        width = 10, height = 9, units = "in")
 
