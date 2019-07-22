@@ -3,7 +3,9 @@
 #' Marta Karas <marta.karass@gmail.com>
 #' 
 #' @description 
-#' Compare effect of number of nighborhood width. 
+#' Code to perform analysis of effect of neighbourhood width parameter on 
+#' ADEPT segmentation. Analysis results are stored at
+#' "data-results/suplmat-effect-of-neighborhood-width.csv".
 
 
 rm(list = ls())

@@ -3,7 +3,10 @@
 #' Marta Karas <marta.karass@gmail.com>
 #' 
 #' @description 
-#' Compare effect of tuning.
+#' Code to perform analysis of the effect of tuning procedure on ADEPT 
+#' segmentation. Analysis results are stored at 
+#' "data-results/suplmat-effect-of-tuning.csv".
+
 
 
 rm(list = ls())

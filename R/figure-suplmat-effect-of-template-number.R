@@ -3,7 +3,8 @@
 #' Marta Karas <marta.karass@gmail.com>
 #' 
 #' @description 
-#' Code to generate Supplementary Material figure. 
+#' Code to generate manuscript figures:
+#' - "suplmat_effect_of_template_number.png"
 
 
 rm(list = ls())
@@ -20,8 +21,7 @@ loc_id.labels  <- c( "Left wrist","Left hip", "Left ankle", "Right ankle")
 
 
 ## -----------------------------------------------------------------------------
-
-## Figure 1 (Supplementary Material)
+## Figure 
 
 plt.name <- "suplmat_effect_of_template_number.png"
   
@@ -50,11 +50,3 @@ plt <-
 # plot(plt)
 ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device, 
        width = 10, height = 6, units = "in")
-
-
-
-
-
-
-
-

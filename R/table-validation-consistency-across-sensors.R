@@ -20,11 +20,7 @@ loc_id.labels  <- c( "Left wrist","Left hip", "Left ankle", "Right ankle")
 
 
 ## -----------------------------------------------------------------------------
-
-## Table 3: 
-## Coefficient of variation (CV), expressed in percentage, of strides 
-## estimation for each study participant across four sensor locations, together 
-## with average CV value.
+## Table 3
 
 res.df <- as.data.frame(fread(file.path("data-results", "validation-consistency-across-sensors.csv")))
 
@@ -45,6 +41,3 @@ tbl.df %>%
 tbl.df %>% 
   summarize_all(mean) %>%
   stargazer( summary = FALSE, rownames = FALSE, digits = 2, font.size = "small")
-
-
-

@@ -3,7 +3,9 @@
 #' Marta Karas <marta.karass@gmail.com>
 #' 
 #' @description 
-#' Code to compute validation of segmentation results consistency across sensor locations.
+#' Code to perform analysis of the consistency of ADEPT segmentation across 
+#' sensor location. Analysis results are stored at 
+#' "data-results/validation-consistency-across-sensors.csv".
 
 rm(list = ls())
 

@@ -3,7 +3,9 @@
 #' Marta Karas <marta.karass@gmail.com>
 #' 
 #' @description 
-#' Compare effect of number of stride pattern templates.
+#' - Code to perform analysis of the effect of a number of stride template 
+#' functions on ADEPT segmentation. Analysis results are stored at 
+#' "data-results/suplmat-effect-of-template-number.csv".
 
 
 rm(list = ls())

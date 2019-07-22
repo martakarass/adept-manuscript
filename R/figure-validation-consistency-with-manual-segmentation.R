@@ -4,9 +4,8 @@
 #' 
 #' @description 
 #' Code to generate manuscript figures: 
-#' - Figure 15: Distribution  density  function  for  estimated  stride  start  
-#'   time  (first  column)  and  endtime (second column) difference values between 
-#'   manually and automatically segmented strides.
+#' - "validation_consistency_with_manual_segmentation_all.png"
+#' - "validation_consistency_with_manual_segmentation_1.png" / "Fig4.eps"
 
 rm(list = ls())
 
@@ -22,11 +21,7 @@ loc_id.labels  <- c( "Left wrist","Left hip", "Left ankle", "Right ankle")
 
 
 ## -----------------------------------------------------------------------------
-
-## Figure 13: 
-## Distribution  density  function  for  estimated  stride  start
-## time  (first  column)  and  endtime (second column) difference values between 
-## manually and automatically segmented strides.
+## Figure 
 
 plt.name <- "validation_consistency_with_manual_segmentation_all.png"
 
@@ -65,12 +60,11 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 
 
 ## -----------------------------------------------------------------------------
+## Figure
 
-## Figure 14: 
-## Comparison of stride segmentation using the manual and ADEPT approaches for 
-## four different body locations.
 plt.name <- "validation_consistency_with_manual_segmentation_1.png"
 
+## Selected participant ID
 subj_id.tmp <- "idf5e3678b"
 
 ## Read data frame with precomputed results of difference between manual and 
@@ -187,6 +181,7 @@ plt <-
 ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device,
        width = 6.5, height = 7, units = "in")
 
+## Save as eps
 ggsave(filename = file.path("figures_eps", "Fig4.eps"), plot = plt, 
        device=cairo_ps, fallback_resolution = 600,
        width = 6.5, height = 7, units = "in")

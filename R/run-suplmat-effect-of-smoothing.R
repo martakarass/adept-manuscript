@@ -3,7 +3,9 @@
 #' Marta Karas <marta.karass@gmail.com>
 #' 
 #' @description 
-#' Compare effect of number of nighborhood width. 
+#' Code to perform analysis of effect of smoothing parameter on 
+#' ADEPT segmentation. Analysis results are stored at
+#' "data-results/suplmat-effect-of-smoothing.csv".
 
 
 rm(list = ls())

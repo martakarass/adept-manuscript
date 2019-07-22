@@ -6,8 +6,8 @@
 #' Code to generate manuscript tables: 
 #' - Table 1: Summary of a number of segmented strides per person out of 32 study 
 #'   participants, grouped by sensor location.
-#' - Table 2: Summary of stride duration time (in seconds) out of all segmented 
-#'   strides from 32 studyparticipants, grouped by sensor location.
+#' - Table 2: Summary of stride duration time (in seconds) out of all segmented strides 
+#'   from 32 study participants, grouped by sensor location.
 
 
 rm(list = ls())
@@ -21,10 +21,7 @@ loc_id.labels  <- c( "Left wrist","Left hip", "Left ankle", "Right ankle")
 
 
 ## -----------------------------------------------------------------------------
-
-## Table 1: 
-## Summary of a number of segmented strides per person out of 32 study 
-## participants, grouped by sensor location.
+## Table 1
 
 res.df <- as.data.frame(fread(file.path("data-results", "application-example-segmentation.csv")))
 
@@ -51,10 +48,7 @@ stargazer(tbl.df, summary = FALSE, rownames = FALSE, digits = 1, font.size = "sm
 
 
 ## -----------------------------------------------------------------------------
-
-## Table 2: 
-## Summary of stride duration time (in seconds) out of all segmented 
-## strides from 32 studyparticipants, grouped by sensor location.
+## Table 2
 
 tbl.df <- 
   res.df %>%
@@ -75,4 +69,3 @@ tbl.df[, c(3,4,5,6)] <- round(tbl.df[, c(3,4,5,6)], 3)
 tbl.df
 
 stargazer(tbl.df, summary = FALSE, rownames = FALSE, digits = 3, font.size = "small")
-

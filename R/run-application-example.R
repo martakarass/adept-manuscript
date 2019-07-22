@@ -22,7 +22,7 @@ source(file.path("R", "util.R"))
 
 ## -----------------------------------------------------------------------------
 ## (1) 
-## Stride pattern segmentation from Application example in the  manuscript. 
+## Stride pattern segmentation from Application example in the manuscript. 
 ## Results are stored at "data-results/application-example-segmentation.csv". 
 
 ## ADEPT algorithm params

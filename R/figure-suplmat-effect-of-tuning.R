@@ -3,7 +3,9 @@
 #' Marta Karas <marta.karass@gmail.com>
 #' 
 #' @description 
-#' Code to generate Supplementary Material figure. 
+#' Code to generate manuscript figures: 
+#' - "suplmat_effect_of_tuning_part1.png"
+#' - "suplmat_effect_of_tuning_part2_A.png"
 
 
 rm(list = ls())
@@ -20,8 +22,7 @@ loc_id.labels  <- c( "Left wrist","Left hip", "Left ankle", "Right ankle")
 
 
 ## -----------------------------------------------------------------------------
-
-## Figure XXX (Supplementary Material)
+## Figure 
 
 plt.name <- "suplmat_effect_of_tuning_part1.png"
   
@@ -56,11 +57,10 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
        width = 10, height = 6, units = "in")
 
 
-
-
 ## -----------------------------------------------------------------------------
+## Figure 
 
-## Figure XXX (Supplementary Material)
+plt.name <- "suplmat_effect_of_tuning_part2_A.png"
 
 ## Accelerometry data subset filtered to keep only data of three participants
 acc.sub <- 
@@ -189,8 +189,6 @@ plt.df.agg <-
             val_median = median(val))
 
 
-## ------------------------
-
 plt <- 
   ggplot(plt.df %>% filter(subj_id == subj_id.levels[1]), 
          aes(x = phase, y = val, color = loc_id, group = obs_idx)) + 
@@ -206,16 +204,7 @@ plt <-
   theme(legend.position = 'none') 
 plot(plt)
 
-ggsave(filename = file.path("figures", "suplmat_effect_of_tuning_part2_A.png"), 
+ggsave(filename = file.path("figures", plt.name), 
        plot = plt, 
        device = ggsave.device,
        width = 10, height = 6, units = "in")
-
-
-
-
-
-
-
-
-
