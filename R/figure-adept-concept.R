@@ -4,7 +4,7 @@
 #' 
 #' @description 
 #' Code to generate manuscript figures: 
-#' - "intro_translation_and_scaling.png"
+#' - "intro_translation_and_scaling.png" / "Fig2.eps"
 #' - "intro_stride_notation.png"
 
 rm(list = ls())
@@ -105,6 +105,7 @@ plt <-
 ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device, 
        width = 8, height = 5.7, units = "in")  
 
+## Save as eps 
 ggsave(filename = file.path("figures_eps", "Fig2.eps"), plot = plt, 
        device=cairo_ps, fallback_resolution = 600,
        width = 8, height = 5.7, units = "in")  

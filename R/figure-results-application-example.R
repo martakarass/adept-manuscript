@@ -4,15 +4,10 @@
 #' 
 #' @description 
 #' Code to generate manuscript figures: 
-#' - Figure 10: Sensor location-specific sets of estimated empirical patterns of 
-#'   a stride. 
-#' - Figure 11: Heatmap  of  walking  cadence  estimates  using  ADEPT  on  left  
-#'   ankle  VM  data. 
-#' - Figure 12: Estimated start point (x-axis) and duration time (y-axis) of all 
-#'   estimated strides for onestudy participant across four sensor locations. 
-#' - Figure 15: Individual strides segmented with ADEPT together with the derived 
-#'   subject- and location-specific stride pattern for three study participants, 
-#'   across four sensor locations.
+#' - "results_estimated_empirical_patterns.png"
+#' - "results_cadence_estimates_heatmap.png"
+#' - "results_stride_duration_bubble_plot.png" / "Fig3.eps"
+#' - "results_individual_strides_3_participants.png" / "Fig5.eps"
 
 
 rm(list = ls())
@@ -31,9 +26,8 @@ loc_id.labels  <- c( "Left wrist","Left hip", "Left ankle", "Right ankle")
 
 
 ## -----------------------------------------------------------------------------
+## Figure 
 
-## Figure 10: 
-## Sensor location-specific sets of estimated empirical patterns of a stride. 
 plt.name <- "results_estimated_empirical_patterns.png"
 
 vl <- 200
@@ -73,9 +67,8 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 
 
 ## -----------------------------------------------------------------------------
+## Figure
 
-## Figure 11: 
-## Sensor location-specific sets of estimated empirical patterns of a stride. 
 plt.name <- "results_cadence_estimates_heatmap.png"
 
 res.df <- as.data.frame(fread(file.path("data-results", "application-example-segmentation.csv")))
@@ -148,10 +141,8 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 
 
 ## -----------------------------------------------------------------------------
+## Figure 
 
-## Figure 12: 
-## Estimated start point (x-axis) and duration time (y-axis) of all
-## estimated strides for onestudy participant across four sensor locations. 
 plt.name <- "results_stride_duration_bubble_plot.png"
 
 subj_id.tmp.idx <- 27
@@ -217,11 +208,7 @@ ggsave(filename = file.path("figures_eps", "Fig3.eps"), plot = plt,
 
 
 ## -----------------------------------------------------------------------------
-
-## Figure 15: 
-## Individual strides segmented with ADEPT together with the derived subject- 
-## and location-specific stride pattern for three study participants, 
-## across four sensor locations.
+## Figure 
 
 plt.name <- "results_individual_strides_3_participants.png"
 
@@ -328,7 +315,7 @@ plt <-
 ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device,
        width = 10, height = 6, units = "in")
 
-
+## Save figure as eps
 ggsave(filename = file.path("figures_eps", "Fig5.eps"), plot = plt, 
        device=cairo_ps, fallback_resolution = 600,
        width = 10, height = 6, units = "in")

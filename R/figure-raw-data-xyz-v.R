@@ -4,7 +4,7 @@
 #' 
 #' @description 
 #' Code to generate manuscript figures: 
-#' - "intro_3d_1d_acc.png" 
+#' - "intro_3d_1d_acc.png" / "Fig1.eps"
 
 rm(list = ls())
 
