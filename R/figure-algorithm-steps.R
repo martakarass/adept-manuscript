@@ -4,9 +4,10 @@
 #' 
 #' @description 
 #' Code to generate manuscript figures: 
-#' - Figure 7: demonstration of window size effect on smoothing. 
-#' - Figure 8: visualization of the ADEPT covariance matrix. 
-#' - Figure 9: visualization of the algorithm tuning step.
+#' - "methods_smoothing_w_param_effect.png"
+#' - "methods_adept_similarity_matrix.png"
+#' - "methods_fine_tuning_part1.png"
+#' - "methods_fine_tuning_part2.png"
 
 
 rm(list = ls())
@@ -24,10 +25,11 @@ loc_id.labels  <- c( "Left wrist","Left hip", "Left ankle", "Right ankle")
 
 
 ## -----------------------------------------------------------------------------
+## Figure
 
-## Figure 7: 
-## demonstration of window size effect on smoothing. 
 plt.name <- "methods_smoothing_w_param_effect.png"
+
+## Selected subject ID
 subj_id.sub <- c("idabd0c53c")
 
 plt.df.0 <- 
@@ -73,13 +75,14 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 
 
 ## -----------------------------------------------------------------------------
-
-## Figure 8: 
-## visualization of the ADEPT covariance matrix. 
+## Figure 
 
 plt.name <- "methods_adept_similarity_matrix.png"
 
+## Selected subject ID
 subj_id.sub <- c("idabd0c53c")
+
+## Selected sensor location ID
 loc_id.sub  <- c("left_ankle")
 
 ## Get VM time-series for data collected at left wrist for 1 participant
@@ -151,9 +154,7 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 
 
 ## -----------------------------------------------------------------------------
-
-## Figure 9: 
-## visualization of the algorithm tuning step.
+## Figure 
 
 plt.name.1 <- "methods_fine_tuning_part1.png"
 plt.name.2 <- "methods_fine_tuning_part2.png"
@@ -202,4 +203,3 @@ plt <-
 # plot(plt)
 ggsave(filename = file.path("figures", plt.name.2), plot = plt, device = ggsave.device, 
        width = 5, height = 4, units = "in")
-
