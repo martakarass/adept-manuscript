@@ -5,7 +5,11 @@
 #' @description
 #' Code to estimate stride pattern templates based on a data set of of manually 
 #' pre-segmented strides. The code was used to generate `stride_template` 
-#' object attached to the `adeptdata` package. 
+#' object attached to `adeptdata` `R` package. 
+#' 
+#' At the end of the script there is a code which validates data objects 
+#' generated with this script are identical with `stride_template` from
+#' `adeptdata` package. 
 
 rm(list = ls())
 
