@@ -4,13 +4,11 @@
 #' 
 #' @description 
 #' Code to generate manuscript figures: 
-#' - Figure 5a: 200 manually segmented strides from right ankle. 
-#' - Figure 5b: 200 manually segmented strides from right ankle after linear 
-#'   interpolation and normalization to have meanzero and variance one.
-#' - Figure 6a: 642 normalized strides clustered into two groups 
-#'   based on their correlation similarity. 
-#' - Figure 6b: 642 normalized strides clustered into three groups 
-#'   based on their correlation similarity. 
+#' - "methods_manually_segmented_strides.png"
+#' - "methods_manually_segmented_strides_norm.png"
+#' - "methods_strides_clustered_2_groups.png"
+#' - "methods_strides_clustered_3_groups.png"
+
 
 rm(list = ls())
 
@@ -24,9 +22,8 @@ ggsave.device <- "png"
 
 
 ## -----------------------------------------------------------------------------
+## Figure
 
-## Figure 5a:
-## 200 manually segmented strides from right ankle. 
 plt.name <- "methods_manually_segmented_strides.png"
 
 strides.df.path <- file.path("data", "strides-df-anonymized.csv")
@@ -57,10 +54,8 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 
 
 ## -----------------------------------------------------------------------------
+## Figure
 
-## Figure 5b:
-## 200 manually segmented strides from right ankle after linear interpolation 
-## and normalization to have meanzero and variance one.
 plt.name <- "methods_manually_segmented_strides_norm.png"
 
 V.intrpl.l <- lapply(stride_id.sub, function(stride_id.tmp){
@@ -95,10 +90,8 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 
 
 ## -----------------------------------------------------------------------------
+## Figure
 
-## Figure 6a:
-## 642 normalized strides clustered into two groups based on their correlation
-## similarity. 
 plt.name <- "methods_strides_clustered_2_groups.png"
 
 k.tmp <- 2
@@ -136,10 +129,8 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
 
 
 ## -----------------------------------------------------------------------------
+## Figure  
 
-## Figure 6b:
-## 642 normalized strides clustered into three groups based on their correlation
-## similarity. 
 plt.name <- "methods_strides_clustered_3_groups.png"
 
 k.tmp <- 3
