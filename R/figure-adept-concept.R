@@ -107,6 +107,9 @@ plt <-
 ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device, 
        width = 8, height = 5.7, units = "in")  
 
+ggsave(filename = file.path("figures_eps", "Fig2.eps"), plot = plt, 
+       device=cairo_ps, fallback_resolution = 600,
+       width = 8, height = 5.7, units = "in")  
 
 ## -----------------------------------------------------------------------------
 
@@ -122,8 +125,7 @@ plt.df$vm_smoothed <- dig_filter(plt.df$vm, 100, LD = 0, LU = 4)
 my.arrow <- arrow(
   type = "closed",
   ends = "both",
-  angle = seq(10, 80, length = 10),
-  length = unit(seq(4, 3, length = 10), "mm"))
+  length = unit(0.1, "inches"))
 
 xip <- c(5.55, 6.48, 7.42)
 tm <- 4.95

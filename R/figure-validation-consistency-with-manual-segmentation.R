@@ -186,3 +186,7 @@ plt <-
 # plot(plt)
 ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device,
        width = 6.5, height = 7, units = "in")
+
+ggsave(filename = file.path("figures_eps", "Fig4.eps"), plot = plt, 
+       device=cairo_ps, fallback_resolution = 600,
+       width = 6.5, height = 7, units = "in")

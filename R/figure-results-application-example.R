@@ -191,7 +191,7 @@ plt <-
                         group = loc_id)) +
   geom_point(aes(size = sim_i), alpha = 0.25) +
   scale_size(range = c(0, 2.5)) + 
-  geom_line(alpha = 0.25) + 
+  # geom_line(alpha = 0.25) + 
   geom_line(data = splines.pred.df, aes(x = tau_i / (100 * 60), y = T_i / 100, group = 1), 
             inherit.aes = FALSE) +
   facet_wrap(~ time_split, scales = "free_x", nrow = split.n) +
@@ -209,6 +209,10 @@ plt <-
         strip.text.x = element_blank())
 # plot(plt)
 ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.device,
+       width = 10, height = 6, units = "in")
+
+ggsave(filename = file.path("figures_eps", "Fig3.eps"), plot = plt, 
+       device=cairo_ps, fallback_resolution = 600,
        width = 10, height = 6, units = "in")
 
 
@@ -325,3 +329,6 @@ ggsave(filename = file.path("figures", plt.name), plot = plt, device = ggsave.de
        width = 10, height = 6, units = "in")
 
 
+ggsave(filename = file.path("figures_eps", "Fig5.eps"), plot = plt, 
+       device=cairo_ps, fallback_resolution = 600,
+       width = 10, height = 6, units = "in")

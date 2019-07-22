@@ -200,8 +200,7 @@ plt <-
             color = "black", inherit.aes = FALSE) +
   facet_grid(finetune ~ loc_id) + 
   theme_Publication() + 
-  labs(title = "", 
-       x = "Stride phase", 
+  labs(x = "Stride phase", 
        y = "Vector magnitude [g]",
        title = "Participant A") + 
   theme(legend.position = 'none') 
