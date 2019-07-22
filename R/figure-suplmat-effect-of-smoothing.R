@@ -3,7 +3,10 @@
 #' Marta Karas <marta.karass@gmail.com>
 #' 
 #' @description 
-#' Code to generate Supplementary Material figure. 
+#' Code to generate manuscript figures: 
+#' - "suplmat_effect_of_smoothing_A.png"
+#' - "suplmat_effect_of_smoothing_B.png"
+#' - "suplmat_effect_of_smoothing_C.png"
 
 
 rm(list = ls())
@@ -20,8 +23,7 @@ loc_id.labels  <- c( "Left wrist", "Left ankle")
 
 
 ## -----------------------------------------------------------------------------
-
-## Figure 1 (Supplementary Material)
+## Figure 
 
 plt.name <- "suplmat_effect_of_smoothing.png"
   
@@ -48,7 +50,7 @@ plt.df <-
          finetune_maxima_ma_W = factor(finetune_maxima_ma_W, levels = finetune_maxima_ma_W.lvl, labels = finetune_maxima_ma_W.lbl),
          x_adept_ma_W = factor(x_adept_ma_W, levels = x_adept_ma_W.lvl, labels = x_adept_ma_W.lbl))
 
-## PLOT A
+
 plt <- 
   ggplot(plt.df %>% filter(subj_id == subj_id.labels[1]), 
          aes(x = factor(loc_id), y = T_i/100)) + 
@@ -64,7 +66,10 @@ ggsave(filename = file.path("figures", "suplmat_effect_of_smoothing_A.png"),
        device = ggsave.device, 
        width = 6, height = 6, units = "in")
 
-## PLOT B
+
+## -----------------------------------------------------------------------------
+## Figure 
+
 plt <- 
   ggplot(plt.df %>% filter(subj_id == subj_id.labels[2]), 
          aes(x = factor(loc_id), y = T_i/100)) +   
@@ -80,7 +85,10 @@ ggsave(filename = file.path("figures", "suplmat_effect_of_smoothing_B.png"),
        device = ggsave.device, 
        width = 6, height = 6, units = "in")
 
-## PLOT C
+
+## -----------------------------------------------------------------------------
+## Figure 
+
 plt <- 
   ggplot(plt.df %>% filter(subj_id == subj_id.labels[3]), 
          aes(x = factor(loc_id), y = T_i/100)) + 
@@ -95,9 +103,3 @@ ggsave(filename = file.path("figures", "suplmat_effect_of_smoothing_C.png"),
        plot = plt,
        device = ggsave.device, 
        width = 6, height = 6, units = "in")
-
-
-
-
-
-
