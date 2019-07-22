@@ -4,9 +4,8 @@
 #' 
 #' @description 
 #' Code to generate manuscript figures: 
-#' - Figure 2: visualize the translation and scaling operations on the data. 
-#' - Figure 4: acceleration time series for two subsequent strides, where the 
-#'   beginning of a stride is marked.
+#' - "intro_translation_and_scaling.png"
+#' - "intro_stride_notation.png"
 
 rm(list = ls())
 
@@ -25,9 +24,8 @@ loc_id.tmp     <- "left_hip"
 
 
 ## -----------------------------------------------------------------------------
+## Figure 
 
-## Figure 2:
-## visualize the translation and scaling operations on the data. 
 plt.name <- "intro_translation_and_scaling.png"
 
 acc.sub <- 
@@ -111,11 +109,10 @@ ggsave(filename = file.path("figures_eps", "Fig2.eps"), plot = plt,
        device=cairo_ps, fallback_resolution = 600,
        width = 8, height = 5.7, units = "in")  
 
-## -----------------------------------------------------------------------------
 
-## Figure 4:
-## acceleration time series for two subsequent strides, where the beginning of a
-## stride is marked.
+## -----------------------------------------------------------------------------
+## Figure
+
 plt.name <- "intro_stride_notation.png"
 
 plt.df <- acc.sub
